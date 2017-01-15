@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ToggleButton;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
     public Socket socket2;
     public int port2 = 6667;
     public OutputStream out2;
+    private static Client client;
+    private static boolean storing = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         jIP = (EditText) findViewById(R.id.xIP);
         jIP.setText(lastIP);
 
-        Button xL = (Button) findViewById(R.id.xL);
+        ToggleButton xL = (ToggleButton) findViewById(R.id.xL);
         final Button xS = (Button) findViewById(R.id.xS);
         final Button xG = (Button) findViewById(R.id.xG);
         assert xL !=null;
@@ -47,56 +51,81 @@ public class MainActivity extends AppCompatActivity {
         assert xG !=null;
         servername = jIP.getText().toString();
 
-        xL.setOnClickListener(new View.OnClickListener() {
+        Thread t2 = new Thread(new Runnable() {
             @Override
-            public void onClick(View v) {
-                Thread t = new Client();
-                t.start();
-
-                Thread t2 = new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        while (true) {
-                            if (frameChanged) {
-                                runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        jIV.setImageBitmap(frame);
-                                    }
-                                });
-                                frameChanged = false;
+            public void run() {
+                while (true) {
+                    if (frameChanged) {
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                jIV.setImageBitmap(frame);
                             }
-                        }
+                        });
+                        frameChanged = false;
                     }
-                });
-                t2.start();
-                xS.setVisibility(View.VISIBLE);
+                }
             }
         });
+        t2.start();
 
-        xS.setOnClickListener(new View.OnClickListener(){
+        xL.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v) {
-                xS.setVisibility(View.INVISIBLE);
-                xG.setVisibility(View.VISIBLE);
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    client = new Client();
+                    client.start();
+                    xS.setVisibility(View.VISIBLE);
+                } else {
+                    client.liveFeed = false;
+                    client = null;
+                    if (storing) {
+                        xG.setVisibility(View.GONE);
 
                         new Thread(new Runnable() {
                             @Override
                             public void run() {
-                                try {
-                                    socket2 = new Socket(servername, port2);
+                                try{
+                                    socket2 = new Socket(servername,port2);
                                     out2 = socket2.getOutputStream();
-                                    out2.write(1);
+                                    out2.write(2);
                                     out2.flush();
                                     socket2.close();
-                                } catch (IOException e2) {
-                                    e2.printStackTrace();
+                                }catch (IOException e3){
+                                    e3.printStackTrace();
                                 }
                             }
                         }).start();
 
+                        storing = false;
+                    }
+                    xS.setVisibility(View.GONE);
+                }
+            }
+        });
 
+        xS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                xS.setVisibility(View.GONE);
+                xG.setVisibility(View.VISIBLE);
 
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            socket2 = new Socket(servername, port2);
+                            out2 = socket2.getOutputStream();
+                            out2.write(1);
+                            out2.flush();
+                            socket2.close();
+                        } catch (IOException e2) {
+                            e2.printStackTrace();
+                        }
+                    }
+                }).start();
+
+                storing = true;
             }
 
         });
@@ -104,24 +133,25 @@ public class MainActivity extends AppCompatActivity {
         xG.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                xG.setVisibility(View.INVISIBLE);
+                xG.setVisibility(View.GONE);
                 xS.setVisibility(View.VISIBLE);
 
-
-                    new Thread(new Runnable() {
-                        @Override
-                        public void run() {
-                            try{
-                                socket2 = new Socket(servername,port2);
-                                out2 = socket2.getOutputStream();
-                                out2.write(2);
-                                out2.flush();
-                                socket2.close();
-                            }catch (IOException e3){
-                                e3.printStackTrace();
-                            }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            socket2 = new Socket(servername,port2);
+                            out2 = socket2.getOutputStream();
+                            out2.write(2);
+                            out2.flush();
+                            socket2.close();
+                        }catch (IOException e3){
+                            e3.printStackTrace();
                         }
-                    }).start();
+                    }
+                }).start();
+
+                storing = false;
             }
         });
 
@@ -134,6 +164,32 @@ public class MainActivity extends AppCompatActivity {
         if (jIP == null) editor.putString("Pref_IP", servername);
         else editor.putString("Pref_IP", jIP.getText().toString());
         editor.commit();
+
+        //stop Live feed if on
+        if (client != null){
+            client.liveFeed = false;
+            client = null;
+
+            //stop storing if on
+            if (storing) {
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try{
+                            socket2 = new Socket(servername,port2);
+                            out2 = socket2.getOutputStream();
+                            out2.write(2);
+                            out2.flush();
+                            socket2.close();
+                        }catch (IOException e3){
+                            e3.printStackTrace();
+                        }
+                    }
+                }).start();
+                storing = false;
+            }
+        }
+
         super.onStop();
     }
 }

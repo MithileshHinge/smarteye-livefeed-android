@@ -16,12 +16,12 @@
         "source": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
         "merged": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
         "source": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\24.0.0\\res\\layout\\notification_template_big_media.xml"
     },
     {
         "merged": "C:\\Users\\Sibhali\\Desktop\\LiveFeed\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",

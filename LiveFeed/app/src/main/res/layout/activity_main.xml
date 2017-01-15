@@ -22,15 +22,25 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView" />
 
-    <Button
+    <!--Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LiveFeed"
         android:id="@+id/xL"
         android:layout_below="@+id/xIP"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true" /-->
 
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOff="LiveFeed"
+        android:textOn="LiveFeed"
+        android:id="@+id/xL"
+        android:layout_below="@+id/xIP"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:checked="false" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

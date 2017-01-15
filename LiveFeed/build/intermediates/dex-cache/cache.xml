@@ -1,3 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="0874286cc2fd88d54fdf130e9d5372730da6de97">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.0.0_12b77480445af87db7fc65322705a40e25c01ac7\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="31833630c004b1d1da481260d985d7f0eff9435d">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_839682703beaf0dd1d62d6c7e292bf3730c497ac\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="3bd97cfefd783e9de1dd1c30574a6adb44b4409b">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.0.0_cb4b9b78afe6bd863689d9be1af994a61459088a\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="e70f608219ed6b974644c333249ab2bb7b71de98">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.0.0_93c6acef2f8cb80157b871c98692abb060822689\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\classes.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2f7e6e2dad1bccaf68a8820820adc6c0d5b96d37">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.0.0_f0173c89d93897f85ef2ed5c0f2599ca139eef7b\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.0.0\support-annotations-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="2943c74db6d4346ab8c6531adac91fa05c137c40">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.0.0_b189485f97ce04bab8f9aad37d0f9396807fdd64\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="964b078ef191d1694409b131585e0798b11f3d27">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_de43a172a327e69612a8afeac5b567776a9a9d4c\classes.dex" />
+    </item>
+    <item
+        jar="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.0.0\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="true"
+        revision="23.0.3"
+        sha1="fcaf463e10e69c1923ccf1edeba3b4196d239e00">
+        <dex dex="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_f845276da2b3a405307d5146b3a6aab9364bcfe4\classes.dex" />
+    </item>
+
+</items>
