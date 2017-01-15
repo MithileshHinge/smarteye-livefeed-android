@@ -4,7 +4,7 @@
     api-level="22"
     density="xhdpi"
     format="7"
-    timestamp="167896115043676" >
+    timestamp="405899274920905" >
 
     <task
         name="javac"
@@ -19,16 +19,19 @@
         name="verifier"
         duration="0" />
 
-    <build timestamp="167459408539740" >
+    <artifact
+        location="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\res\resources-debug.ap_"
+        type="RESOURCES" />
+
+    <build timestamp="401324109229290" >
         <artifact
             location="C:\Users\Sibhali\Desktop\LiveFeed\app\build\outputs\apk\app-debug.apk"
             type="MAIN" />
     </build>
-    <build timestamp="167873312580131" >
+    <build timestamp="405899274920905" >
         <artifact
-            location="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\transforms\dex\debug\folders\1000\5\slice_3\classes.dex"
-            type="DEX" />
+            location="C:\Users\Sibhali\Desktop\LiveFeed\app\build\intermediates\res\resources-debug.ap_"
+            type="RESOURCES" />
     </build>
-    <build timestamp="167896115043676" />
 
 </instant-run>
